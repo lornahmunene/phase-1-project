@@ -40,6 +40,11 @@ document.addEventListener("DOMContentLoaded", function() {
         const infoDisplay = document.getElementById('title');
         const genusName=document.getElementById('genus')
         const familyName=document.getElementById('family')
+        const caloriesCount=document.getElementById('calories')
+        const fatContent=document.getElementById('fat')
+        const cabohydrateCount=document.getElementById('carbohydrates')
+        const sugarContent=document.getElementById('sugar')
+        const proteinContent=document.getElementById('protein')
         fruits.forEach(fruit => {
           const fruitName = fruit.name;
           const fruitId = fruit.id;
@@ -58,8 +63,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 infoDisplay.innerHTML=`Name: ${info.name}`
                  genusName.innerHTML=`Genus: ${info.genus}`
                   familyName.innerHTML=`Family: ${info.family}`
-console.log(`Name: ${info.name}, Genus: ${info.genus}, Family: ${info.family}`)
-                
+                  caloriesCount.innerHTML=`calories:${info.calories}`
+                  fatContent.innerHTML=`fatContent:${info.fat}`
+                cabohydrateCount.innerHTML=`Carbs:${info.carbohydrates}`
+                sugarContent.innerHTML=`sugar:${info.sugar}`
+                proteinContent.innerHTML=`protein:${info.protein}`
               })
               .catch(error => {
                 console.error('Error fetching additional information:', error);
@@ -75,9 +83,4 @@ console.log(`Name: ${info.name}, Genus: ${info.genus}, Family: ${info.family}`)
       });
   });
   
-
-
-
-
-
 
