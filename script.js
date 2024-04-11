@@ -1,50 +1,36 @@
-// document.addEventListener("DOMContentLoaded", function() {
-//     console.log("The DOM has loaded");
-//   });
-// const baseUrl= 'http://localhost:3000/fruits'
-// fetch(baseUrl)
-// .then(res => res.json())
-// .then(fruits =>{
-//   fruits.filter(fruit => {
-//       const fruitName=fruit.name;
-//       const fruitList=document.getElementById('allfruits');
-//       const list=document.createElement('li');
-//       list.textContent=fruitName;
-//       fruitList.appendChild(list)
-   
-//     })
-//         });
-//         fetch(baseUrl)
-//         .then(res =>res.json())
-//         .then(info =>{
-//             info.filter(fruit=>{
-//                 const fruitId=fruit.id
-//             })
-//         }
-
-
      
-
-
-
-        
 document.addEventListener("DOMContentLoaded", function() {
+  // this event listener loads all the content in the file
     console.log("The DOM has loaded");
+    // when it successfully fires it console logs "The DOM has loaded"
   
     const baseUrl = 'http://localhost:3000/fruits';
+    // i have declared a variable baseUrl that is asssigned the link to my json-server
   
     fetch(baseUrl)
+    //  a get request is made to my json server
       .then(res => res.json())
+      // the response is the data in json format
       .then(fruits => {
+        // in the above line there's an arrow function that is generated
         const fruitList = document.getElementById('allfruits');
+        // gets an element by id all fruits
         const infoDisplay = document.getElementById('title');
+        // gets an element by id title
         const genusName=document.getElementById('genus')
+        // gets an element by id genus
         const familyName=document.getElementById('family')
+        // gets an element by id family
         const caloriesCount=document.getElementById('calories')
+        // gets an element by calories
         const fatContent=document.getElementById('fat')
+        // gets an element by fat
         const cabohydrateCount=document.getElementById('carbohydrates')
+        // gets an element by carbohydrate
         const sugarContent=document.getElementById('sugar')
+        // gets an element by sugar
         const proteinContent=document.getElementById('protein')
+        // gets an element by protein
         fruits.forEach(fruit => {
           const fruitName = fruit.name;
           const fruitId = fruit.id;
@@ -52,8 +38,9 @@ document.addEventListener("DOMContentLoaded", function() {
           const list = document.createElement('li');
           list.textContent = fruitName;
           
-          
+        
           list.addEventListener('click', () => {
+            // an event listener is added to make the list of fruits responsive
             
             fetch(`${baseUrl}/${fruitId}`)
               .then(res => res.json())
@@ -61,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 
                 
                 infoDisplay.innerHTML=`Name: ${info.name}`
+                // according to each fruit id a name is added to the display card
                  genusName.innerHTML=`Genus: ${info.genus}`
                   familyName.innerHTML=`Family: ${info.family}`
                   caloriesCount.innerHTML=`calories:${info.nutritions.calories}`
@@ -70,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 proteinContent.innerHTML=`protein:${info.nutritions.protein}`
               })
               .catch(error => {
+                // incase of any errors while executing the code this error is loaded
                 console.error('Error fetching additional information:', error);
               });
           });
