@@ -63,11 +63,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 infoDisplay.innerHTML=`Name: ${info.name}`
                  genusName.innerHTML=`Genus: ${info.genus}`
                   familyName.innerHTML=`Family: ${info.family}`
-                  caloriesCount.innerHTML=`calories:${info.calories}`
-                  fatContent.innerHTML=`fatContent:${info.fat}`
-                cabohydrateCount.innerHTML=`Carbs:${info.carbohydrates}`
-                sugarContent.innerHTML=`sugar:${info.sugar}`
-                proteinContent.innerHTML=`protein:${info.protein}`
+                  caloriesCount.innerHTML=`calories:${info.nutritions.calories}`
+                  fatContent.innerHTML=`fatContent:${info.nutritions.fat}`
+                cabohydrateCount.innerHTML=`Carbs:${info.nutritions.carbohydrates}`
+                sugarContent.innerHTML=`sugar:${info.nutritions.sugar}`
+                proteinContent.innerHTML=`protein:${info.nutrtions.protein}`
               })
               .catch(error => {
                 console.error('Error fetching additional information:', error);
