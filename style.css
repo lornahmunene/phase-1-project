@@ -30,16 +30,25 @@ background-color: aqua;
 width: 300px;
 } */
 .title{
-    color: red;
+    color: black;
+    background-color:orange;
 }
 .family{
     color:blue
 }
 .fourwidecolumn{
-    border: 1px solid#ccc;
-    border-radius: 5px;
+    border: 1px solid red;
     padding: 10px;
     background-color:white;
-    margin-right: 100px;
-    margin-left:1000px
+    margin-right: 50px;
+    margin-left:1000px;
+    float: left;
+    width: 50%;
 }
+.fruit-list{
+    width: 30%;
+}
+p{
+    color: antiquewhite;
+}
+
