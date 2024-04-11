@@ -22,6 +22,7 @@
 //             })
 //         }
 
+
      
 
 
@@ -36,6 +37,9 @@ document.addEventListener("DOMContentLoaded", function() {
       .then(res => res.json())
       .then(fruits => {
         const fruitList = document.getElementById('allfruits');
+        const infoDisplay = document.getElementById('title');
+        const genusName=document.getElementById('genus')
+        const familyName=document.getElementById('family')
         fruits.forEach(fruit => {
           const fruitName = fruit.name;
           const fruitId = fruit.id;
@@ -48,11 +52,12 @@ document.addEventListener("DOMContentLoaded", function() {
             
             fetch(`${baseUrl}/${fruitId}`)
               .then(res => res.json())
-              .then(info => {
-            
-                const infoDisplay = document.getElementById('infoDisplay');
-                infoDisplay.textContent =`Name: ${info.name}, Genus: ${info.genus}, Family: ${info.family}`
+              .then(info => {                  
                 
+                
+                infoDisplay.innerHTML=`Name: ${info.name}`
+                 genusName.innerHTML=`Genus: ${info.genus}`
+                  familyName.innerHTML=`Family: ${info.family}`
 console.log(`Name: ${info.name}, Genus: ${info.genus}, Family: ${info.family}`)
                 
               })
@@ -66,8 +71,11 @@ console.log(`Name: ${info.name}, Genus: ${info.genus}, Family: ${info.family}`)
       })
       .catch(error => {
         console.error('Error fetching fruits:', error);
+
       });
   });
+  
+
 
 
 
