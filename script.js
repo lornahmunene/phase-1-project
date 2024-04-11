@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
                   fatContent.innerHTML=`fatContent:${info.nutritions.fat}`
                 cabohydrateCount.innerHTML=`Carbs:${info.nutritions.carbohydrates}`
                 sugarContent.innerHTML=`sugar:${info.nutritions.sugar}`
-                proteinContent.innerHTML=`protein:${info.nutrtions.protein}`
+                proteinContent.innerHTML=`protein:${info.nutritions.protein}`
               })
               .catch(error => {
                 console.error('Error fetching additional information:', error);
