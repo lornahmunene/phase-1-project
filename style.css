@@ -1,0 +1,45 @@
+body{
+background-image:url('image/0b2d21ae831c9d3ba88aaa1b9e777da7.jpg');
+
+}
+/* #allfruits{
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+} */
+h1{
+    color: red;
+}
+h2{
+    color: azure;
+}
+ul{
+    color: aqua;
+}
+#allfruits{
+    list-style-type: none;
+    cursor: pointer;
+}
+/* .fourwidecolumn{
+    border: 1px solid whitesmoke;
+padding: 10px;
+display: none;
+background-color: aqua;
+width: 300px;
+} */
+.title{
+    color: red;
+}
+.family{
+    color:blue
+}
+.fourwidecolumn{
+    border: 1px solid#ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color:white;
+    margin-right: 100px;
+    margin-left:1000px
+}
