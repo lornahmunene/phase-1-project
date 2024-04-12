@@ -71,5 +71,33 @@ document.addEventListener("DOMContentLoaded", function() {
 
       });
   });
+  document.getElementById('fruitForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    
+    const formData = new FormData(this);
+    const fruitData = Object.fromEntries(formData);
+
+    try {
+        const response = await fetch('http://localhost:3000/fruits',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(fruitData)
+        });
+
+        if (response.ok) {
+            alert('Fruit added successfully!');
+        } else {
+            const errorText = await response.text();
+            console.error('Error:', errorText);
+            alert('Failed to add fruit. Please try again.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Failed to add fruit. Please try again.');
+    }
+});
+
   
 
