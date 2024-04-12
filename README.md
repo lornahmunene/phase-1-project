@@ -17,6 +17,10 @@ Git
 ### installation instruction
 To install this just follow this simple instructions 
 Git clone https://github.com/lornahmunene/phase-1-project
+make sure to install the json server globally by running this command on your terminal
+npm install -g json-server
+and then this command
+json-server --watch db.json
 
 ## Technologies used 
 HTML
